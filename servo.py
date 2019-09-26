@@ -20,6 +20,11 @@ for i in range(5):
 	servo.ChangeDutyCycle(top)
 	time.sleep(1.0)
 
+def setservo(x):
+    pulse = ((top-bottom)*(x+90)/180)+bottom
+    servo.ChangeDutyCycle(pulse)
+    time.sleep(1.0)
+
 
 
 
