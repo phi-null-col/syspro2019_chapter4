@@ -1,5 +1,6 @@
 import time
 import RPi.GPIO as GPIO
+import random
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(2, GPIO.OUT)
@@ -22,9 +23,12 @@ for i in range(5):
 
 def setservo(x):
     pulse = ((top-bottom)*(x+90)/180)+bottom
+    print(pulse)
     servo.ChangeDutyCycle(pulse)
     time.sleep(1.0)
 
-
-
+for i in range(10):
+    out = random.uniform(-90,90)
+    print(out)
+    setservo(out)
 
